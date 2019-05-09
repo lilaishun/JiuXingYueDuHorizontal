@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <dimen name="timeSize">18sp</dimen>
+    <dimen name="news_textSize">19sp</dimen>
+    <dimen name="news_timeSize">13sp</dimen>
+    <dimen name="picker_view_height">160dp</dimen>
+    <dimen name="date_unit_text_size">18sp</dimen>
+</resources>

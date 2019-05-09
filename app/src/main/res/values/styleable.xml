@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="RoundImageView">
+        <attr name="image_radius" format="dimension" />//圆角大小
+        <attr name="image_shadow_radius" format="dimension" />//阴影大小
+        <attr name="image_circle" format="boolean" />//是否圆形
+        <attr name="image_shadow" format="boolean" />//是否阴影
+        <attr name="shadow_color" format="integer"/>//阴影颜色
+    </declare-styleable>
+
+        <declare-styleable name="MyWheelView">
+            <attr name="item_number" format="integer" />
+            <attr name="selected_line_color" format="color" />
+            <attr name="selected_background_color" format="color" />
+            <attr name="normal_text_color" format="color" />
+            <attr name="selected_text_color" format="color" />
+        </declare-styleable>
+
+</resources>

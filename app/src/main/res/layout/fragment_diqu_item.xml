@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+ >
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:gravity="center"
+      android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/newslist_last"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@mipmap/newslist_last"
+        android:visibility="invisible" />
+
+    <com.jiuxingyuedu.horizontal.view.CustomGridView
+        android:id="@+id/all_Gv"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:numColumns="4">
+
+    </com.jiuxingyuedu.horizontal.view.CustomGridView>
+
+    <ImageView
+        android:id="@+id/newslist_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@mipmap/newslist_next"
+        android:visibility="invisible" />
+  </LinearLayout>
+
+
+
+
+  <!--地区筛选-->
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:gravity="center"
+      android:layout_height="wrap_content">
+  <LinearLayout
+      android:id="@+id/ll_diqu"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:background="@mipmap/news_sort_bg"
+      android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/beijing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="北京"
+            android:textColor="#ffffff"
+            android:textSize="27sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/tianjin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="天津"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/hebei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="河北"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/shanxi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="山西"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/neimenggu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="内蒙古"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/liaoning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="辽宁"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/jilin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="吉林"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/heilongjiang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="黑龙江"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+    </LinearLayout>
+    <!--***************************************-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/shanghai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="上海"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/jiangsu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="江苏"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/zhejiang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="浙江"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/anhui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="安徽"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/fujian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="福建"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/jiangxi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="江西"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/shand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="山东"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/henan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="河南"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+    </LinearLayout>
+    <!--*************************************-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/hubei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="湖北"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/hunan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="湖南"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/guangdong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="广东"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/guangxi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="广西"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/hainan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="海南"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/chongqing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="重庆"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/sichuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="四川"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/guizhou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="贵州"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+    </LinearLayout>
+
+    <!--￥￥￥￥￥￥￥￥￥￥￥-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/yunnan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="云南"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/xizang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="西藏"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/shanxi2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="陕西"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/gansu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="甘肃"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/qinghai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="青海"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/ningxia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="宁夏"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+            android:id="@+id/xinjiang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/news_location_bg"
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:text="新疆"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="20dp"
+            android:text=""
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+      </LinearLayout>
+    </LinearLayout>
+
+  </LinearLayout>
+  </LinearLayout>
+</RelativeLayout>

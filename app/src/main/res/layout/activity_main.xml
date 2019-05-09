@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg"
+
+    tools:context=".Activity.MainActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/dateTime"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/whilte"
+        android:textSize="@dimen/timeSize"
+        android:text="欢迎您，今天是 "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+  />
+
+    <LinearLayout
+        android:id="@+id/ll_"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="35dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="16dp"
+        android:paddingBottom="10dp">
+
+        <RadioGroup
+            android:id="@+id/RG_Main"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/btn1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:button="@null"
+                android:gravity="center"
+                android:text="全部报纸"
+                android:textColor="@drawable/color_radiobutton"
+                android:textSize="@dimen/timeSize" />
+
+            <RadioButton
+                android:id="@+id/btn2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1"
+
+                android:button="@null"
+                android:gravity="center"
+                android:text="字顺预览"
+                android:textColor="@drawable/color_radiobutton"
+                android:textSize="@dimen/timeSize" />
+
+            <RadioButton
+                android:id="@+id/btn3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:text="分类浏览"
+                android:textColor="@drawable/color_radiobutton"
+
+                android:textSize="@dimen/timeSize" />
+
+            <RadioButton
+                android:id="@+id/btn4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:text="地区浏览"
+                android:textColor="@drawable/color_radiobutton"
+
+                android:textSize="@dimen/timeSize" />
+
+            <RadioButton
+                android:id="@+id/btn5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:text="热门报纸"
+                android:textColor="@drawable/color_radiobutton"
+
+                android:textSize="@dimen/timeSize" />
+
+        </RadioGroup>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="2"></View>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+android:id="@+id/ll_earch1"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+
+                android:layout_height="78dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="20dp"
+android:orientation="horizontal"
+                android:background="@mipmap/search_bg"
+
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center_vertical">
+
+                <View
+                    android:id="@+id/et_seacher1"
+                    android:layout_width="600dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+
+                    android:background="@null"
+                    android:baselineAligned="false"
+                    android:paddingLeft="10dp"
+
+                    android:textColor="@color/whilte" />
+
+                <ImageView
+                    android:id="@+id/iv_clear1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:background="@mipmap/clear_bt" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/search_btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:background="@mipmap/search_btn" />
+        </LinearLayout>
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1">
+
+    </FrameLayout>
+ <!--   <com.jiuxingyuedu.horizontal.view.ViewPagerSlide
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+
+
+        android:layout_weight="1"></com.jiuxingyuedu.horizontal.view.ViewPagerSlide>-->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_height="185dp">
+    <ImageView
+        android:layout_width="800dp"
+        android:layout_height="match_parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginBottom="30dp"
+        android:layout_height="wrap_content">
+    <com.jiuxingyuedu.horizontal.view.IndicatorSeekBar
+        android:id="@+id/indicator_seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@null"
+        android:max="100"
+        android:maxHeight="10dp"
+        android:minHeight="10dp"
+        android:progress="0"
+android:visibility="invisible"
+android:progressDrawable="@color/black2"
+        android:thumb="@drawable/seekbar_thumb" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="650dp"
+        android:layout_height="match_parent" />
+</LinearLayout>
+</LinearLayout>
+   <!-- android:visibility="gone"-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/seacher_key"
+        android:visibility="gone"
+        android:background="@mipmap/keyboard_bg01"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/LL_Sea"
+            android:layout_height="wrap_content">
+        <TextView
+
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/whilte"
+            android:textSize="@dimen/timeSize"
+            android:visibility="invisible"
+            android:text="欢迎您，今天是 "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="35dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="16dp"
+            android:paddingBottom="10dp">
+
+            <RadioGroup
+                android:visibility="invisible"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="全部报纸"
+                    android:textColor="@drawable/color_radiobutton"
+                    android:textSize="@dimen/timeSize" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="字顺预览"
+                    android:textColor="@drawable/color_radiobutton"
+                    android:textSize="@dimen/timeSize" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="分类浏览"
+                    android:textColor="@drawable/color_radiobutton"
+
+                    android:textSize="@dimen/timeSize" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="地区浏览"
+                    android:textColor="@drawable/color_radiobutton"
+
+                    android:textSize="@dimen/timeSize" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="热门报纸"
+                    android:textColor="@drawable/color_radiobutton"
+
+                    android:textSize="@dimen/timeSize" />
+
+            </RadioGroup>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="2"></View>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="78dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal"
+                    android:background="@mipmap/search_bg"
+
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/et_seacher"
+                        android:layout_width="600dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="60dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:focusable="false"
+                        android:background="@null"
+                        android:baselineAligned="false"
+                        android:paddingLeft="10dp"
+
+                        android:textColor="@color/whilte" />
+
+                    <ImageView
+                        android:id="@+id/iv_clear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:background="@mipmap/clear_bt" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/search_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginRight="35dp"
+                    android:background="@mipmap/search_btn" />
+            </LinearLayout>
+        </LinearLayout>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+
+            android:layout_below="@id/LL_Sea"
+            android:layout_width="match_parent"
+
+            android:gravity="center"
+            android:orientation="horizontal"
+
+            android:layout_height="match_parent">
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"></View>
+            <LinearLayout
+                android:layout_width="wrap_content"
+
+                android:background="@mipmap/keyboard_bg02"
+                android:orientation="vertical"
+
+                android:layout_height="630dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="wrap_content"
+
+                        android:background="@mipmap/keyboard_tips"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="wrap_content"
+                        android:background="@mipmap/keyboard_last"
+                        android:layout_height="wrap_content" />
+                    <com.jiuxingyuedu.horizontal.view.HorizontalListView
+                        android:id="@+id/hlv"
+                        android:layout_weight="1"
+                        android:layout_height="30dp"
+                        android:layout_width="0dp"
+                        ></com.jiuxingyuedu.horizontal.view.HorizontalListView>
+                    <ImageView
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_width="wrap_content"
+                        android:background="@mipmap/keyboard_next"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziQ"
+
+                                android:background="@drawable/q_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziW"
+                                android:background="@drawable/w_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziE"
+                                android:background="@drawable/e_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziR"
+                                android:background="@drawable/r_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziT"
+                                android:background="@drawable/t_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziY"
+                                android:background="@drawable/y_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziU"
+                                android:background="@drawable/u_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziI"
+                                android:background="@drawable/i_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziO"
+                                android:background="@drawable/o_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziP"
+                                android:background="@drawable/p_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziA"
+
+                                android:background="@drawable/a_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziS"
+                                android:background="@drawable/s_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziD"
+                                android:background="@drawable/d_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziF"
+                                android:background="@drawable/f_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziG"
+                                android:background="@drawable/g_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziH"
+                                android:background="@drawable/h_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziJ"
+                                android:background="@drawable/j_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziK"
+                                android:background="@drawable/k_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziL"
+                                android:background="@drawable/l_select_state"
+
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziZ"
+                                android:background="@drawable/z_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziX"
+                                android:background="@drawable/x_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziC"
+                                android:background="@drawable/c_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziV"
+                                android:background="@drawable/v_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziB"
+                                android:background="@drawable/b_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziN"
+                                android:background="@drawable/n_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziM"
+                                android:background="@drawable/m_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:id="@+id/ziDelate"
+                                android:background="@drawable/delate_select_state"
+
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"></View>
+            </LinearLayout>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="1dp"></View>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
