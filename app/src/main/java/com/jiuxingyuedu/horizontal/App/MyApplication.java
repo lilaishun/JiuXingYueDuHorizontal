@@ -22,7 +22,8 @@ public class MyApplication extends android.app.Application {
         super.onCreate();
         OkGo.getInstance().init(this);
         //搜集本地tbs内核信息并上报服务器，服务器返回结果决定使用哪个内核。
-
+        //错误日志收集
+//	CrashCatchHandler.getInstance().init(this);
         QbSdk.PreInitCallback cb = new QbSdk.PreInitCallback() {
 
             @Override
