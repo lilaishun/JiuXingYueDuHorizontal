@@ -781,7 +781,12 @@ Des=false;
                     Des=true;
                     DesTimer();
                     System.out.println("========================执行了");
-
+                    ISSHOWSEACHER=false;
+                    mActivity. ISShowSeach=false;
+                    mActivity.seacher_key.setVisibility(View.GONE);
+                    mActivity.et_seacher.setText("");
+                    mActivity.ll_earch1.setVisibility(View.VISIBLE);
+                    mActivity.et_seacher.setShowSoftInputOnFocus(false);
                     mActivity.setFrist();
 
                     break;

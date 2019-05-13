@@ -530,11 +530,12 @@ private String DataTime;
 //                                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 //                                startActivity(intent);
                          //   }
+                            System.out.println("url====="+url+"==urlfilter=="+urlfilter);
                             Pattern pattern = Pattern.compile(""+urlfilter);
                             if(pattern.matcher(url).matches()){
-
-                            }else {
                                 mWebView.loadUrl(url);
+                            }else {
+
                             }
                             setCreateTime();
                             return true;
