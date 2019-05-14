@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.jiuxingyuedu.horizontal.Bean.NewsNean;
 import com.jiuxingyuedu.horizontal.Receiver.DaemonService;
+import com.jiuxingyuedu.horizontal.Util.CrashCatchHandler;
 import com.lzy.okgo.OkGo;
 import com.tencent.smtt.sdk.QbSdk;
 
@@ -23,7 +24,7 @@ public class MyApplication extends android.app.Application {
         OkGo.getInstance().init(this);
         //搜集本地tbs内核信息并上报服务器，服务器返回结果决定使用哪个内核。
         //错误日志收集
-//	CrashCatchHandler.getInstance().init(this);
+	CrashCatchHandler.getInstance().init(this);
         QbSdk.PreInitCallback cb = new QbSdk.PreInitCallback() {
 
             @Override

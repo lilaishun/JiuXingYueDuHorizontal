@@ -320,6 +320,13 @@ mActivity.et_seacher.setOnClickListener(new View.OnClickListener() {
         mActivity. horizontalListViewAdapter.SetData(NewsNeanListss);
         mActivity.et_seacher.setText("");
         indicatorSeekBar.setVisibility(View.VISIBLE);
+        if(null!=mActivity.seacher_key&&mActivity.ll_earch1!=null&&mActivity.seacher_key.getVisibility()==View.VISIBLE){
+            mActivity.seacher_key.setVisibility(View.GONE);
+            mActivity.et_seacher.setText("");
+            mActivity.ll_earch1.setVisibility(View.VISIBLE);
+        }
+
+
 
         if(MyApplication.ISFORBack){
 

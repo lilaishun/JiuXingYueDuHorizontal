@@ -509,6 +509,11 @@ ButterKnife.bind(this,getLayContentView());
         List<NewsNean> NewsNeanListss = new ArrayList<>();
         mActivity. horizontalListViewAdapter.SetData(NewsNeanListss);
         mActivity.et_seacher.setText("");
+        if(null!=mActivity.seacher_key&&mActivity.ll_earch1!=null&&mActivity.seacher_key.getVisibility()==View.VISIBLE){
+            mActivity.seacher_key.setVisibility(View.GONE);
+            mActivity.et_seacher.setText("");
+            mActivity.ll_earch1.setVisibility(View.VISIBLE);
+        }
         getData();
 
         if(!MyApplication.ISONCLICKSEA){

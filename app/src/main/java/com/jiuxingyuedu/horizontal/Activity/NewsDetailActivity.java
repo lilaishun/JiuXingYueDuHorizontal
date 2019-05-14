@@ -530,7 +530,7 @@ private String DataTime;
 //                                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 //                                startActivity(intent);
                          //   }
-                            System.out.println("url====="+url+"==urlfilter=="+urlfilter);
+                            System.out.println( "url==============="+url+"====="+urlfilter);
                             Pattern pattern = Pattern.compile(""+urlfilter);
                             if(pattern.matcher(url).matches()){
                                 mWebView.loadUrl(url);
@@ -877,6 +877,7 @@ private String DataTime;
          * @param mFileRelativeUrl 下载相对地址
          * （我们从服务器端获取到的数据都是相对的地址）例如： "filepath": "/movie/20180511/1526028508.txt"
          */
+        detail_newsAdapter.SelectIndex(index);
         if(index==0){
             iv_last.setVisibility(View.INVISIBLE);
         }
@@ -885,6 +886,8 @@ private String DataTime;
         }
         if(index==NewsDateilList.size()-1){
             iv_next.setVisibility(View.INVISIBLE);
+        }else{
+            iv_next.setVisibility(View.VISIBLE);
         }
         no_data.setVisibility(View.GONE);
 //        new Thread(new Runnable() {

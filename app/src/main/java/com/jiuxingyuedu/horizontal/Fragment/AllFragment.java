@@ -47,6 +47,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -81,6 +83,8 @@ private ArrayList<NewsNean> NewsList=new ArrayList();
     private int totalCount;
     private Map<String, DateNews> dateNews;
     private MainActivity mActivity;
+    private Timer timer;
+
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -135,6 +139,7 @@ ButterKnife.bind(this,getLayContentView());
                     mActivity.seacher_key.setVisibility(View.VISIBLE);
                     mActivity.ll_earch1.setVisibility(View.INVISIBLE);
                     mActivity.et_seacher.setShowSoftInputOnFocus(false);
+                    setCreateTime();
                     setStateFr(NewsNeanLists,0);
                     ISSHOWSEACHER=true;
                     setSeacher("",NewsNeanLists);
@@ -145,6 +150,7 @@ ButterKnife.bind(this,getLayContentView());
                     mActivity.et_seacher.setShowSoftInputOnFocus(false);
                     mActivity.seacher_key.setVisibility(View.GONE);
                     mActivity.ll_earch1.setVisibility(View.VISIBLE);
+                    DesTimer();
 
                 }
             }
@@ -197,6 +203,7 @@ ButterKnife.bind(this,getLayContentView());
                         mActivity.ISShowSeach = true;
                         mActivity.seacher_key.setVisibility(View.VISIBLE);
                         mActivity.ll_earch1.setVisibility(View.INVISIBLE);
+                        setCreateTime();
                         mActivity.et_seacher.setText("");
                         mActivity.et_seacher.setShowSoftInputOnFocus(false);
                         setStateFr(NewsNeanLists, 0);
@@ -209,6 +216,7 @@ ButterKnife.bind(this,getLayContentView());
                         mActivity.et_seacher.setShowSoftInputOnFocus(false);
                         mActivity.seacher_key.setVisibility(View.GONE);
                         mActivity.ll_earch1.setVisibility(View.VISIBLE);
+                        DesTimer();
                         mActivity.et_seacher.setText("");
 
                     }
@@ -223,6 +231,7 @@ ButterKnife.bind(this,getLayContentView());
                     mActivity.ISShowSeach = false;
                     mActivity.seacher_key.setVisibility(View.GONE);
                     mActivity.ll_earch1.setVisibility(View.VISIBLE);
+                    DesTimer();
                     setSeach(NewsNeanLists, mActivity.et_seacher.getText().toString().trim());
                     mActivity.et_seacher.setText("");
 
@@ -726,6 +735,7 @@ if(current<=pageCount) {
                     ISSHOWSEACHER = false;
                     mActivity.seacher_key.setVisibility(View.GONE);
                     mActivity.ll_earch1.setVisibility(View.VISIBLE);
+                    DesTimer();
                     mActivity.et_seacher.setText("");
                     //  setSeach(NewsNeanListss,mActivity.et_seacher.getText().toString().trim());
                     String name = NewsNeanListss.get(position).getName();
@@ -750,4 +760,58 @@ if(current<=pageCount) {
             });
 
     }
+    //开启定时器
+    private void createTimer (){
+        //避免定时器多次执行，每次先判断销毁
+        if(null!=timer){
+            timer.cancel();
+            timer.purge();
+        }
+//创建定时器
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                mHadler.sendEmptyMessage(0);
+            }
+        },10000*6*5,10000);
+    }
+
+    //销毁定时器
+
+    private void DesTimer(){
+        if(null!=timer){
+            timer.cancel();
+            timer.purge();
+            timer=null;
+        }
+    }
+    //调用定时器
+    private void setCreateTime(){
+        System.out.println("=====================调用定时器");
+        DesTimer();
+        createTimer();
+
+    }
+    private Handler mHadler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+                case 0:
+
+                    DesTimer();
+                    System.out.println("========================执行了");
+                    ISSHOWSEACHER=false;
+                    mActivity. ISShowSeach=false;
+                    mActivity.seacher_key.setVisibility(View.GONE);
+                    mActivity.et_seacher.setText("");
+                    mActivity.ll_earch1.setVisibility(View.VISIBLE);
+                    mActivity.et_seacher.setShowSoftInputOnFocus(false);
+
+
+                    break;
+            }
+        }
+    };
 }
