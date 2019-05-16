@@ -58,7 +58,7 @@ public class ProgressDialogHandler extends Handler {
                 WindowManager.LayoutParams params = pd.getWindow().getAttributes();
                 params.width = (int) DensityUtil.dip2px(120);
                 params.height=(int) DensityUtil.dip2px(90);
-                params.x = 260; // 新位置X坐标
+                params.x = 220; // 新位置X坐标
              //   params.y = 100; // 新位置Y坐标
                 pd.getWindow().setAttributes(params);
             }

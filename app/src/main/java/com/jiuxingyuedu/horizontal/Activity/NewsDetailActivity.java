@@ -44,6 +44,7 @@ import com.jiuxingyuedu.horizontal.Util.Configs;
 import com.jiuxingyuedu.horizontal.Util.DataUtil;
 import com.jiuxingyuedu.horizontal.Util.DownloadUtil;
 import com.jiuxingyuedu.horizontal.Util.TimeUtils;
+import com.jiuxingyuedu.horizontal.Util.Utils;
 import com.jiuxingyuedu.horizontal.view.CustomDatePicker;
 import com.jiuxingyuedu.horizontal.view.MyWebView;
 import com.jiuxingyuedu.horizontal.view.MyWheelView;
@@ -113,6 +114,7 @@ if(NewsDateilList.size()>0){
                     //x5web.loadUrl("www.baidu.com");
                     CurrentIndex=0;
                     mWebView.setVisibility(View.INVISIBLE);
+
                     displayFromFile1(NewsDateilList.get(CurrentIndex).getUrl(),CurrentIndex);
 
                     break;
@@ -211,6 +213,9 @@ if(NewsDateilList.size()>0){
                     rl_iv.setVisibility(View.VISIBLE);
                     rl_iv.setImageBitmap(obj);
 
+                    iv_next.setFocusable(true);
+                    iv_last.setFocusable(true);
+                    dismissProgressDialog();
                     break;
                 case 6:
                     DateNews dateNews = DateNews2.get(id2);
@@ -754,19 +759,25 @@ private String DataTime;
         gv_detail.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                detail_newsAdapter.SelectIndex(position);
-                CurrentIndex=position;
-                if(CurrentIndex>=0) {
-                    displayFromFile1(NewsDateilList.get(CurrentIndex).getUrl(),CurrentIndex);
+                if (Utils.isFastClick()) {
+                    // 进行点击事件后的逻辑操作
+                    detail_newsAdapter.SelectIndex(position);
+                    CurrentIndex = position;
+                    if (CurrentIndex >= 0) {
+                        displayFromFile1(NewsDateilList.get(CurrentIndex).getUrl(), CurrentIndex);
 
-                    detail_newsAdapter.SelectIndex(CurrentIndex);
+                        detail_newsAdapter.SelectIndex(CurrentIndex);
+                    }
+                    setCreateTime();
                 }
-                setCreateTime();
             }
         });
         iv_last.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (Utils.isFastClick()) {
+                    // 进行点击事件后的逻辑操作
+
                 CurrentIndex=CurrentIndex-1;
                 if(CurrentIndex>=0) {
                     displayFromFile1(NewsDateilList.get(CurrentIndex).getUrl(),CurrentIndex);
@@ -775,18 +786,22 @@ private String DataTime;
                 }
                 setCreateTime();
             }
+            }
         });
         iv_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CurrentIndex+=1;
-                if(CurrentIndex<NewsDateilList.size()) {
-                    System.out.println("pdf====="+NewsDateilList.get(CurrentIndex).getPdf());
-                    displayFromFile1(NewsDateilList.get(CurrentIndex).getUrl(),CurrentIndex);
+                if (Utils.isFastClick()) {
+                    // 进行点击事件后的逻辑操作
+                    CurrentIndex += 1;
+                    if (CurrentIndex < NewsDateilList.size()) {
+                        System.out.println("pdf=====" + NewsDateilList.get(CurrentIndex).getPdf());
+                        displayFromFile1(NewsDateilList.get(CurrentIndex).getUrl(), CurrentIndex);
 
-                    detail_newsAdapter.SelectIndex(CurrentIndex);
+                        detail_newsAdapter.SelectIndex(CurrentIndex);
+                    }
+                    setCreateTime();
                 }
-                setCreateTime();
             }
         });
         getData(time);
@@ -877,6 +892,9 @@ private String DataTime;
          * @param mFileRelativeUrl 下载相对地址
          * （我们从服务器端获取到的数据都是相对的地址）例如： "filepath": "/movie/20180511/1526028508.txt"
          */
+        iv_next.setFocusable(false);
+        iv_last.setFocusable(false);
+        showProgressDialog();
         detail_newsAdapter.SelectIndex(index);
         if(index==0){
             iv_last.setVisibility(View.INVISIBLE);

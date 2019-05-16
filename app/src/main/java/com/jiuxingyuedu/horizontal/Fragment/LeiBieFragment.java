@@ -402,7 +402,9 @@ ButterKnife.bind(this,getLayContentView());
         getData();
         if(!MyApplication.ISONCLICKSEA){
             List<NewsNean> NewsNeanListzz= new ArrayList<>();
-            mActivity.horizontalListViewAdapter.SetData(NewsNeanListzz);
+            if(null!=mActivity&&null!=mActivity.horizontalListViewAdapter&&null!=NewsNeanListzz){
+                mActivity.horizontalListViewAdapter.SetData(NewsNeanListzz);
+            }
             ClearData();
         }
         Des=false;

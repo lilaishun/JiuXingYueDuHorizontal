@@ -333,7 +333,9 @@ mActivity.et_seacher.setOnClickListener(new View.OnClickListener() {
         }else {
 
             List<NewsNean> NewsNeanListzz= new ArrayList<>();
-            mActivity.horizontalListViewAdapter.SetData(NewsNeanListzz);
+            if(null!=mActivity&&null!=mActivity.horizontalListViewAdapter&&null!=NewsNeanListzz){
+                mActivity.horizontalListViewAdapter.SetData(NewsNeanListzz);
+            }
             setAdapterList(NewsNeanList);
 
         }

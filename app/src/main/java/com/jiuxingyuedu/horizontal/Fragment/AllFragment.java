@@ -300,7 +300,10 @@ if(MyApplication.ISFORBack){
 
 }else{
     List<NewsNean> NewsNeanListzz= new ArrayList<>();
-    mActivity.horizontalListViewAdapter.SetData(NewsNeanListzz);
+    if(null!=mActivity&&null!=mActivity.horizontalListViewAdapter&&null!=NewsNeanListzz){
+        mActivity.horizontalListViewAdapter.SetData(NewsNeanListzz);
+    }
+
 
 
     setAdapterList(NewsNeanList);
